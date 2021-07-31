@@ -46,28 +46,27 @@
                         <div class="pull-right">
                             <a class="btn btn-primary btn-sm" href="{{ route('users.index') }}">{{trans('admin/user.back')}}</a>
                         </div>
-                    </div><br>
+                    </div><br> <br>
                     <form class="parsley-style-1" id="selectForm2" autocomplete="off" name="selectForm2"
                           action="{{route('users.store','test')}}" method="post">
                         {{csrf_field()}}
 
-                        <div class="">
 
-                            <div class="row mg-b-20">
-                                <div class="parsley-input col-md-6" id="fnWrapper">
-                                    <label> {{trans('admin/user.user_name')}}: <span class="tx-danger">*</span></label>
-                                    <input class="form-control form-control-sm mg-b-20"
-                                           data-parsley-class-handler="#lnWrapper" name="name" required="" type="text">
-                                </div>
 
-                                <div class="parsley-input col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
-                                    <label>{{trans('admin/user.email')}}: <span class="tx-danger">*</span></label>
-                                    <input class="form-control form-control-sm mg-b-20"
-                                           data-parsley-class-handler="#lnWrapper" name="email" required="" type="email">
-                                </div>
+                        <div class="row mg-b-20">
+                            <div class="parsley-input col-md-6" id="fnWrapper">
+                                <label> {{trans('admin/user.user_name')}}: <span class="tx-danger">*</span></label>
+                                <input class="form-control form-control-sm mg-b-20"
+                                        data-parsley-class-handler="#lnWrapper" name="name" required="" type="text">
                             </div>
 
+                            <div class="parsley-input col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                <label>{{trans('admin/user.email')}}: <span class="tx-danger">*</span></label>
+                                <input class="form-control form-control-sm mg-b-20"
+                                        data-parsley-class-handler="#lnWrapper" name="email" required="" type="email">
+                            </div>
                         </div>
+
 
                         <div class="row mg-b-20">
                             <div class="parsley-input col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">

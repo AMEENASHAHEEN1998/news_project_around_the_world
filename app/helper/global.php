@@ -43,4 +43,25 @@ function count_user()
     return $count;
 }
 
+function average_publish_news(){
+    $count_publish = Blog::where('Value_Status' , 2)->count();
+    $count_blogs = Blog::count();
+    $result = $count_publish/$count_blogs * 100 . '%';
+    return $result  ;
+}
+
+function average_unpublish_news(){
+    $count_publish = Blog::where('Value_Status' , 3)->count();
+    $count_blogs = Blog::count();
+    $result = $count_publish/$count_blogs * 100 . '%';
+    return $result  ;
+}
+
+function average_approval_news(){
+    $count_publish = Blog::where('Value_Status' , 1)->count();
+    $count_blogs = Blog::count();
+    $result = $count_publish/$count_blogs * 100 . '%';
+    return $result  ;
+}
+
 ?>

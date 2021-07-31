@@ -181,6 +181,7 @@ return [
 
         App\Providers\VariableProvider::class,
 
+        Fx3costa\LaravelChartJs\Providers\ChartjsServiceProvider::class
 
     ],
 

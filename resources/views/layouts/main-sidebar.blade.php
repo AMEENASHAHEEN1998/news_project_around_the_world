@@ -6,11 +6,10 @@
                 <ul class="nav navbar-nav side-menu" id="sidebarnav">
                     <!-- menu item Dashboard-->
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard">
+                        <a href="{{ route('dashboard') }}" >
                             <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">{{trans('admin/news.dashboard')}}</span>
                             </div>
-                            <div class="pull-right"><i class="ti-plus"></i></div>
-                            <div class="clearfix"></div>
+                            
                         </a>
 
                     </li>
@@ -22,7 +21,7 @@
                     <li>
 
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#elements">
-                            <div class="pull-left"><i class="ti-palette"></i><span
+                            <div class="pull-left"><i class="fa fa-newspaper-o" aria-hidden="true"></i><span
                                     class="right-nav-text">{{trans('admin/news.total_news')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
@@ -82,7 +81,7 @@
                         <li>
                             @can('كافة أصناف الأخبار')
                             <a href="javascript:void(0);" data-toggle="collapse" data-target="#join_reporters">
-                                <div class="pull-left"><i class="ti-calendar"></i><span
+                                <div class="pull-left"><i class="fa fa-paper-plane-o" aria-hidden="true"></i><span
                                         class="right-nav-text">{{trans('admin/join_reporters.join_reporters')}}</span></div>
                                 <div class="pull-right"><i class="ti-plus"></i></div>
                                 <div class="clearfix"></div>
@@ -108,7 +107,7 @@
                     <li>
                         @can('المستخدمين')
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#elementsuser">
-                            <div class="pull-left"><i class="ti-palette"></i><span
+                            <div class="pull-left"><i class="fa fa-users" aria-hidden="true"></i><span
                                     class="right-nav-text">{{trans('admin/user.users')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
@@ -132,7 +131,7 @@
 
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#site">
-                            <div class="pull-left"><i class="ti-palette"></i><span
+                            <div class="pull-left"><i class="fa fa-globe" aria-hidden="true"></i><span
                                     class="right-nav-text">{{trans('admin/user.site')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
@@ -146,7 +145,7 @@
 
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#logout">
-                            <div class="pull-left"><i class="ti-palette"></i><span
+                            <div class="pull-left"><i class=" ti-unlock"></i><span
                                     class="right-nav-text">{{trans('admin/user.logout')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>

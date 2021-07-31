@@ -9,7 +9,7 @@
 
     {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
     <title>Around The World</title>
-    
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -17,11 +17,10 @@
 <link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon" />
 
     <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/website/css/font-awesome.min.css') }}">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"
-    integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{-- {{-- <!-- Font Icon --> --}}
@@ -29,6 +28,18 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="{{ asset('assets/login/style.css') }}">
+    <!--- Style css -->
+    <style>
+        .auth{
+            color: white;
+            background-color: #000;
+        }
+    </style>
+@if (App::getLocale() == 'en')
+<link href="{{ URL::asset('assets/css/ltr.css') }}" rel="stylesheet">
+@else
+<link href="{{ URL::asset('assets/css/rtl.css') }}" rel="stylesheet">
+@endif
 </head>
 <body>
     <div id="app">
@@ -36,7 +47,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- {{ config('app.name', 'Laravel') }} --}}
-                    Around The World
+                    {{ trans('auth.title') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -52,12 +63,12 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <li class="nav-item {{ (request()->routeIs('login')) ? 'auth' : '' }}">
+                                <a class="nav-link" href="{{ route('login') }}">{{ trans('auth.login') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <li class="nav-item {{ (request()->routeIs('register')) ? 'auth' : '' }}">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ trans('auth.register')}}</a>
                                 </li>
                             @endif
                         @else

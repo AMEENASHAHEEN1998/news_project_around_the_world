@@ -83,38 +83,38 @@
     <div class="container">
         <div class="signup-content">
             <div class="signup-form">
-                <h2 class="form-title">Sign up</h2>
+                <h2 class="form-title">{{ trans('auth.register') }}</h2>
                 <form method="POST" class="register-form" id="register-form" action="{{ route('register') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="name"><i class="fa fa-user fa-1x"></i></label>
-                        <input type="text" name="name" id="name" placeholder="Your Name"/>
+                        <label for="name"><i class="fa fa-user" aria-hidden="true"></i></label>
+                        <input type="text" name="name" id="name" placeholder="{{ trans('auth.name') }}"/>
                     </div>
                     <div class="form-group">
-                        <label for="email"><i class="zmdi zmdi-email"></i></label>
-                        <input type="email" name="email" id="email" placeholder="Your Email"/>
+                        <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i></label>
+                        <input type="email" name="email" id="email" placeholder="{{ trans('auth.email') }}"/>
                     </div>
                     <div class="form-group">
-                        <label for="password"><i class="zmdi zmdi-lock"></i></label>
-                        <input type="password" name="password" id="password" placeholder="Password"/>
+                        <label for="password"><i class="fa fa-unlock-alt" aria-hidden="true"></i></label>
+                        <input type="password" name="password" id="password" placeholder="{{ trans('auth.password') }}"/>
                     </div>
                     <div class="form-group">
-                        <label for="password_confirmation"><i class="zmdi zmdi-lock-outline"></i></label>
-                        <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Repeat your password"/>
+                        <label for="password_confirmation"><i class="fa fa-unlock-alt" aria-hidden="true"></i></label>
+                        <input type="password" name="password_confirmation" id="password_confirmation" placeholder="{{ trans('auth.repeat_password') }}"/>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
                         <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
-                    </div>
+                    </div> --}}
                     <div class="form-group form-button">
-                        <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                        <input type="submit" name="signup" id="signup" class="form-submit" value="{{ trans('auth.register') }}"/>
                     </div>
                     <input type="hidden" name="Status" value="مفعل">
                 </form>
             </div>
             <div class="signup-image">
                 <figure><img src="{{ asset('assets/login/images/signup-image.jpg') }}" alt="sing up image"></figure>
-                <a href="{{ route('login') }}" class="signup-image-link">I am already member</a>
+                <a href="{{ route('login') }}" class="signup-image-link">{{ trans('auth.member') }}</a>
             </div>
         </div>
     </div>

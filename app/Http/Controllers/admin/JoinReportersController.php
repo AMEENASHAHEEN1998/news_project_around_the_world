@@ -37,7 +37,7 @@ class JoinReportersController extends Controller
         $data = $request->except(['_token' , 'user_id']);
 
         $email_reporter = EmailReporter::create($data);
-        join_reporter::where('user_id' , $request->user_id)->Update([
+        JoinReporters::where('user_id' , $request->user_id)->Update([
             'status' => 1,
         ]);
         //return $request->email;

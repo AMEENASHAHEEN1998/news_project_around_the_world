@@ -22,14 +22,14 @@ class JoinReportersController extends Controller
     public function show_join_request($id){
         $NewsCategorys = NewsCategory::all();
         $join_reporter = JoinReporters::findOrFail($id);
-        
+
         return view('Admin.JoinReporters.show_single_request')->with(['join_reporter' => $join_reporter , 'NewsCategorys' => $NewsCategorys]);
     }
 
     public function call_reporter($id){
         $NewsCategorys = NewsCategory::all();
         $join_reporter = JoinReporters::findOrFail($id);
-        
+
         return view('Admin.JoinReporters.call_reporter')->with(['join_reporter' => $join_reporter , 'NewsCategorys' => $NewsCategorys]);
     }
 
@@ -38,10 +38,10 @@ class JoinReportersController extends Controller
 
         $email_reporter = EmailReporter::create($data);
         join_reporter::where('user_id' , $request->user_id)->Update([
-            'status' => 1;
+            'status' => 1,
         ]);
         //return $request->email;
-        Mail::to($request->email)->send(new SendEmailReporter($email_reporter)); 
+        Mail::to($request->email)->send(new SendEmailReporter($email_reporter));
         return redirect()->back();
     }
 

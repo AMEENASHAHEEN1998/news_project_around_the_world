@@ -43,6 +43,7 @@ class JoinReportersController extends Controller
         //return $request->email;
         Mail::to($request->email)->send(new SendEmailReporter($email_reporter));
         return redirect()->back();
+        //bjhb
     }
 
     public function delete(Request $request){

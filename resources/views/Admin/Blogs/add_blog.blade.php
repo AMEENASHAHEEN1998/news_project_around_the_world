@@ -41,19 +41,19 @@
                         <div class="row">
                             <div class="col">
                                 <label for="inputName" class="control-label">{{trans('admin/blogs.blog_name_ar')}}</label>
-                                <input type="text" class="form-control" id="inputName" name="blog_name_ar"
-                                       title="{{trans('admin/blogs.blog_name_title')}}" required>
+                                <input type="text" class="form-control form-control-lg" id="inputName" name="blog_name_ar"
+                                       title="{{trans('admin/blogs.blog_name_title')}}" value="{{  old('blog_name_ar') }}" required>
                             </div>
                             <div class="col">
                                 <label for="inputName" class="control-label">{{trans('admin/blogs.blog_name_en')}}</label>
-                                <input type="text" class="form-control" id="inputName" name="blog_name_en"
-                                       title="{{trans('admin/blogs.blog_name_title')}}" required>
+                                <input type="text" class="form-control form-control-lg" id="inputName" name="blog_name_en"
+                                       title="{{trans('admin/blogs.blog_name_title')}}"  value="{{  old('blog_name_en') }}" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <label for="inputName" class="control-label">{{trans('admin/blogs.blog_category')}}</label>
-                                <select name="news_category_name" class="form-control SlectBox" required >
+                                <select name="news_category_name" class="form-control form-control-lg SlectBox" required >
                                     <!--placeholder-->
                                     <option value="" selected disabled>{{trans('admin/blogs.choose_blog_category')}}</option>
                                     @foreach ($NewsCategorys as $NewsCategory)
@@ -63,7 +63,7 @@
                             </div>
                             <div class="col">
                                 <label> {{trans('admin/blogs.news_date')}}</label>
-                                <input class="form-control fc-datepicker" name="news_Date" placeholder="YYYY-MM-DD"
+                                <input class="form-control form-control-lg  fc-datepicker" name="news_Date" placeholder="YYYY-MM-DD"
                                        type="date" value="{{ date('Y-m-d') }}" required>
                             </div>
 
@@ -75,32 +75,32 @@
                         <div class="row">
                             <div class="col">
                                 <label for="exampleTextarea">{{trans('admin/blogs.short_note_ar')}}</label>
-                                <textarea class="form-control" id="exampleTextarea" name="note_ar" rows="3" required></textarea>
+                                <textarea class="form-control" id="exampleTextarea" name="note_ar" rows="3" required>{{  old('note_ar') }}</textarea>
                             </div>
                         </div><br>
                         <div class="row">
                             <div class="col">
                                 <label for="exampleTextarea">{{trans('admin/blogs.short_note_en')}}</label>
-                                <textarea class="form-control" id="exampleTextarea" name="note_en" rows="3" required></textarea>
+                                <textarea class="form-control" id="exampleTextarea" name="note_en" rows="3" required>{{  old('note_en') }}</textarea>
                             </div>
                         </div><br>
                         <div class="row">
                             <div class="col">
                                 <label for="exampleTextarea">{{trans('admin/blogs.the_details_ar')}}</label>
-                                <textarea class="form-control" id="exampleTextarea" name="note_details_ar" rows="3"></textarea>
+                                <textarea class="form-control" id="exampleTextarea" name="note_details_ar" rows="3">{{  old('note_details_ar') }}</textarea>
                             </div>
                         </div><br>
                         <div class="row">
                             <div class="col">
                                 <label for="exampleTextarea">{{trans('admin/blogs.the_details_en')}}</label>
-                                <textarea class="form-control" id="exampleTextarea" name="note_details_en" rows="3"></textarea>
+                                <textarea class="form-control" id="exampleTextarea" name="note_details_en" rows="3">{{  old('note_details_en') }}</textarea>
                             </div>
                         </div><br>
                         <p class="text-danger"> {{trans('admin/blogs.attachment_format')}}</p>
                         <h5 class="card-title">{{trans('admin/blogs.attachments')}}</h5>
 
                         <div class="col-sm-12 col-md-12">
-                            <input type="file" name="pic" class="dropify" accept=".jpg, .png, image/jpeg, image/png"
+                            <input type="file" name="pic" class="dropify" accept=".jpg,.webp, .png, image/jpeg, image/png"
                                    data-height="70" />
                         </div><br>
 

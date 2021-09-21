@@ -7,6 +7,7 @@ use App\Models\admin\Blog;
 use App\Models\admin\NewsCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class BlogController extends Controller
 {
@@ -18,7 +19,7 @@ class BlogController extends Controller
     public function index()
     {
         $NewsCategorys = NewsCategory::all();
-        $Blogs = Blog::all();
+        $Blogs = Blog::orderBy('id' , 'desc')->get();
         return view('Admin.Blogs.show_all_blogs' , compact('Blogs' , 'NewsCategorys'));
 
     }
@@ -129,13 +130,23 @@ class BlogController extends Controller
 
             $Blog = Blog::findOrFail($id);
 
+            if ($request->hasFile('pic')) {
+                $imageName = $request->pic->getClientOriginalName();
+                $request->pic->move(public_path('Attachments/'), $imageName);
+            if (File::exists($Blog->imageName)) {
+                File::delete($Blog->imageName);
+            }
+            $Blog->update([
+                'image_name' => $imageName
+            ]);
+            }
+
             $Blog->update([
                 $Blog->user_id = $request->user_id,
                 $Blog->views = 0,
                 $Blog->blog_name = ['en' => $request->blog_name_en, 'ar' => $request->blog_name_ar],
                 $Blog->short_note = ['en' => $request->note_en, 'ar' => $request->note_ar] ,
                 $Blog->long_notes = ['en' => $request->note_details_en, 'ar' => $request->note_details_ar] ,
-                $Blog->image_name = $request->pic ,
                 $Blog->Status = ['en' => 'Approve The Blog' , 'ar' => 'الموافقة على الخبر'],
                 $Blog->Value_Status = 1,
                 $Blog->news_Date = $request->news_Date,

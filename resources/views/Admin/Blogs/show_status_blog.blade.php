@@ -91,7 +91,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="exampleTextarea">{{trans('admin/blogs.status_blog')}}</label>
-                                <select class="form-control" id="Status" name="Status" required>
+                                <select class="form-control form-control-lg" id="Status" name="Status" required>
                                     <option selected="true" disabled="disabled"> {{trans('admin/blogs.identify_status_blog')}}</option>
                                     <option value="الأخبار المنشورة">{{trans('admin/blogs.approve_blog')}}</option>
                                     <option value="الأخبار المرفوضة"> {{trans('admin/blogs.un_approve_blog')}}</option>
@@ -100,7 +100,7 @@
 
                             <div class="col">
                                 <label>{{trans('admin/blogs.date_of_publication')}}</label>
-                                <input class="form-control fc-datepicker" name="news_Date" value="{{ $Blog->news_Date }}"
+                                <input class="form-control form-control-lg fc-datepicker" name="news_Date" value="{{ $Blog->news_Date }}"
                                        type="text" required>
                             </div>
 

@@ -19,7 +19,7 @@ return [
     'choose_blog_category' =>'حدد نوع الخبر',
     'the_details_ar' => ' التفاصيل بالعربية',
     'the_details_en' => ' التفاصيل بالانجليزية',
-    'attachment_format' =>'* صيغة المرفق jpeg ,.jpg , png',
+    'attachment_format' =>'* صيغة المرفق jpeg ,.jpg , png ,.webp',
     'attachments' => 'المرفقات',
     'sent'=>'ارسال',
     'edit_blog' => 'تعديل الخبر',

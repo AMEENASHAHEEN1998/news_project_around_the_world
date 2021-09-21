@@ -70,7 +70,7 @@
                 </div>
             </div>
             <div class="header_bottom">
-                <div class="logo_area"><a class="logo" href="#">{{trans('admin/news.around_theworld')}}<span></span></a></div>
+                <div class="logo_area"><a class="logo" href="#"><img style="height: 100px;" src="{{URL::asset('assets/website/images/logo.jpg')}}" alt="">{{trans('admin/news.around_theworld')}}<span></span></a></div>
                 <div class="top_addarea"><a href="#"><img src="{{URL::asset('assets/website/images/addbanner_728x90_V1.jpg')}}" alt=""></a></div>
             </div>
         </header>

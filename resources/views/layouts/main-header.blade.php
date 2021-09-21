@@ -3,7 +3,7 @@
         <nav class="admin-header navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <!-- logo -->
             <div class="text-left navbar-brand-wrapper">
-                <h6 class="text-center">{{trans('admin/news.around_theworld')}}</h6>
+                <h6 class="text-center"><img style="height: 30px;" src="{{URL::asset('assets/website/images/logo.jpg')}}" alt="">{{trans('admin/news.around_theworld')}}</h6>
                 <p class="text-center">By Eng Ameena Shaheen</p>
             </div>
             <!-- Top bar left -->

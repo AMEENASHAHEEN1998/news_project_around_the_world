@@ -19,7 +19,7 @@ return [
     'choose_blog_category' =>'Choose Blog Category',
     'the_details_ar' => 'The Details in Arabic',
     'the_details_en' => 'The Details in English',
-    'attachment_format' =>'* Attachment Format jpeg ,.jpg , png',
+    'attachment_format' =>'* Attachment Format jpeg ,.jpg , png ,.webp',
     'attachments' => 'Attachments',
     'sent'=>'Sent',
     'edit_blog' => 'Edit Blog',

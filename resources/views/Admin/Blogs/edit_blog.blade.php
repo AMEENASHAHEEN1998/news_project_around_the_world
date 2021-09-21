@@ -51,7 +51,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="inputName" class="control-label">{{trans('admin/blogs.blog_category')}}</label>
-                                <select name="news_category_name" class="form-control SlectBox" value="{{$Blog->news_category_id}}" required >
+                                <select name="news_category_name" class="form-control form-control-lg SlectBox" value="{{$Blog->news_category_id}}" required >
                                     <!--placeholder-->
                                     <option value="" selected disabled>{{trans('admin/blogs.choose_blog_category')}}</option>
                                     @foreach ($NewsCategorys as $NewsCategory)
@@ -62,7 +62,7 @@
 
                             <div class="col">
                                 <label> {{trans('admin/blogs.news_date')}}</label>
-                                <input class="form-control fc-datepicker" name="news_Date" placeholder="YYYY-MM-DD"
+                                <input class="form-control form-control-lg fc-datepicker" name="news_Date" placeholder="YYYY-MM-DD"
                                        type="date" value="{{ $Blog->news_Date }}" required>
                             </div>
                         </div>
@@ -71,32 +71,35 @@
                             <div class="col">
                                 <label for="exampleTextarea">{{trans('admin/blogs.short_note_ar')}}</label>
                                 <textarea class="form-control" id="exampleTextarea" name="note_ar" rows="3"
-                                          value="{{$Blog->getTranslation('short_note', 'ar')}}" required></textarea>
+                                          required>{{$Blog->getTranslation('short_note', 'ar')}}</textarea>
                             </div>
                         </div><br>
                         <div class="row">
                             <div class="col">
                                 <label for="exampleTextarea">{{trans('admin/blogs.short_note_en')}}</label>
                                 <textarea class="form-control" id="exampleTextarea" name="note_en" rows="3"
-                                          value="{{$Blog->getTranslation('short_note', 'en')}}" required></textarea>
+                                           required>{{$Blog->getTranslation('short_note', 'en')}}</textarea>
                             </div>
                         </div><br>
                         <div class="row">
                             <div class="col">
                                 <label for="exampleTextarea">{{trans('admin/blogs.the_details_ar')}}</label>
                                 <textarea class="form-control" id="exampleTextarea" name="note_details_ar" rows="3"
-                                          value="{{$Blog->getTranslation('long_notes', 'ar')}}"></textarea>
+                                        >{{$Blog->getTranslation('long_notes', 'ar')}}</textarea>
                             </div>
                         </div><br>
                         <div class="row">
                             <div class="col">
                                 <label for="exampleTextarea">{{trans('admin/blogs.the_details_en')}}</label>
                                 <textarea class="form-control" id="exampleTextarea" name="note_details_en" rows="3"
-                                          value="{{$Blog->getTranslation('long_notes', 'en')}}"></textarea>
+                                         > {{$Blog->getTranslation('long_notes', 'en')}}</textarea>
                             </div>
                         </div><br>
-                        <input type="hidden" name="pic" class="dropify" accept=".jpg, .png, image/jpeg, image/png"
-                               data-height="70" value="{{$Blog->image_name}}" />
+                        <div class="col-sm-12 col-md-12">
+                            <input type="file" name="pic" class="dropify" accept=".jpg,.webp, .png, image/jpeg, image/png"
+                                   data-height="70" />
+                        </div><br>
+                        <img src="{{ URL::to('/Attachments/'.$Blog->image_name)}}" alt="">
 
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary">{{trans('admin/blogs.sent')}}</button>
